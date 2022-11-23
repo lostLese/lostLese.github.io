@@ -6,7 +6,21 @@
     <description>Recent content in Posts on The Blog of Yongqiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 17 Nov 2022 23:25:22 +0800</lastBuildDate><atom:link href="https://lostlese.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 16:24:43 +0800</lastBuildDate><atom:link href="https://lostlese.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog_11_23_读者写者问题的三种写法</title>
+      <link>https://lostlese.github.io/post/blog_11_23/</link>
+      <pubDate>Wed, 23 Nov 2022 16:24:43 +0800</pubDate>
+      
+      <guid>https://lostlese.github.io/post/blog_11_23/</guid>
+      <description>====================================================================== readers are prior [analyse:] writer:
+can&amp;rsquo;t write when anyone is reading. exclusive
+readers: when one of the readers are reading, the readers who want to read can read.
+but them can&amp;rsquo;t read when the writer is writing. exclusive
+the action to change the readcount and the lock made the reader and writer exclusive are exclusive.
+====================================================================== //the reason why the readcount is not a semaphore is that it was // a condition ,and not a semaphore make the process exclusive int readcount = 0; semaphore mutex = 1, w = 1;</description>
+    </item>
+    
     <item>
       <title>关于生产者消费者问题的理解</title>
       <link>https://lostlese.github.io/post/blog5-%E5%89%AF%E6%9C%AC/</link>
