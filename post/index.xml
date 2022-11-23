@@ -13,12 +13,7 @@
       <pubDate>Wed, 23 Nov 2022 16:24:43 +0800</pubDate>
       
       <guid>https://lostlese.github.io/post/blog_11_23/</guid>
-      <description>====================================================================== readers are prior [analyse:] writer:
-can&amp;rsquo;t write when anyone is reading. exclusive
-readers: when one of the readers are reading, the readers who want to read can read.
-but them can&amp;rsquo;t read when the writer is writing. exclusive
-the action to change the readcount and the lock made the reader and writer exclusive are exclusive.
-====================================================================== //the reason why the readcount is not a semaphore is that it was // a condition ,and not a semaphore make the process exclusive int readcount = 0; semaphore mutex = 1, w = 1;</description>
+      <description>====================================================================== readers are prior [analyse:] writer: can&amp;#39;t write when anyone is reading. exclusive readers: when one of the readers are reading, the readers who want to read can read. but them can&amp;#39;t read when the writer is writing. exclusive the action to change the readcount and the lock made the reader and writer exclusive are exclusive. ====================================================================== //the reason why the readcount is not a semaphore is that it was // a condition ,and not a semaphore make the process exclusive int readcount = 0; semaphore mutex = 1, w = 1; reader(){ while(1){ wait(mutex); if(readcount == 0) wait(w);	\\读者读的时候互斥 readcount++;	signal(mutex); 读； wait(mutex); readcount--; if(readcount == 0) signal(w); signal(mutex);	} } writer(){ while(1){ wait(w); 写； siganl(w); } } ====================================================================== the writer is prior [analyse:] writer: writer is one can write, but them have a list to block.</description>
     </item>
     
     <item>
